@@ -12,7 +12,7 @@
 		16E6A567245957F200783C28 /* BusSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 16E6A559245957F200783C28 /* BusSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16E6A5722459586400783C28 /* BusSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6A5702459586400783C28 /* BusSliderView.swift */; };
 		16E6A5732459586400783C28 /* BusSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16E6A5712459586400783C28 /* BusSliderView.xib */; };
-		16E6A575245958D500783C28 /* Connectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6A574245958D500783C28 /* Connectable.swift */; };
+		16E6A5B42459643700783C28 /* Connectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6A5B32459643700783C28 /* Connectable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +25,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		16E6A5A924595DB100783C28 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		16E6A556245957F200783C28 /* BusSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E6A559245957F200783C28 /* BusSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusSlider.h; sourceTree = "<group>"; };
@@ -34,7 +47,7 @@
 		16E6A566245957F200783C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16E6A5702459586400783C28 /* BusSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusSliderView.swift; sourceTree = "<group>"; };
 		16E6A5712459586400783C28 /* BusSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusSliderView.xib; sourceTree = "<group>"; };
-		16E6A574245958D500783C28 /* Connectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectable.swift; sourceTree = "<group>"; };
+		16E6A5B32459643700783C28 /* Connectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +75,7 @@
 				16E6A558245957F200783C28 /* BusSlider */,
 				16E6A563245957F200783C28 /* BusSliderTests */,
 				16E6A557245957F200783C28 /* Products */,
+				16E6A5A524595DB100783C28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,7 +91,7 @@
 		16E6A558245957F200783C28 /* BusSlider */ = {
 			isa = PBXGroup;
 			children = (
-				16E6A574245958D500783C28 /* Connectable.swift */,
+				16E6A5B32459643700783C28 /* Connectable.swift */,
 				16E6A5702459586400783C28 /* BusSliderView.swift */,
 				16E6A5712459586400783C28 /* BusSliderView.xib */,
 				16E6A559245957F200783C28 /* BusSlider.h */,
@@ -93,6 +107,13 @@
 				16E6A566245957F200783C28 /* Info.plist */,
 			);
 			path = BusSliderTests;
+			sourceTree = "<group>";
+		};
+		16E6A5A524595DB100783C28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,6 +138,7 @@
 				16E6A552245957F200783C28 /* Sources */,
 				16E6A553245957F200783C28 /* Frameworks */,
 				16E6A554245957F200783C28 /* Resources */,
+				16E6A5A924595DB100783C28 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E6A575245958D500783C28 /* Connectable.swift in Sources */,
+				16E6A5B42459643700783C28 /* Connectable.swift in Sources */,
 				16E6A5722459586400783C28 /* BusSliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +382,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Example",
+				);
 				INFOPLIST_FILE = BusSlider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -370,6 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sherlock.BusSlider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,6 +413,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Example",
+				);
 				INFOPLIST_FILE = BusSlider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -396,6 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sherlock.BusSlider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

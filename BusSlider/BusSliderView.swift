@@ -9,8 +9,8 @@
 import UIKit
 
 @IBDesignable
-class BusSliderView: UIView, Connectable {
-    typealias ONChanger = (Int) ->()
+public class BusSliderView: UIView, Connectable {
+    public typealias ONChanger = (Int) ->()
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var stack: UIStackView!
@@ -18,31 +18,31 @@ class BusSliderView: UIView, Connectable {
     @IBOutlet weak var vwMain: UIView!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
-    var onChange: ONChanger?
+    public var onChange: ONChanger?
     
     @IBInspectable
-    var toggleColor: UIColor = .orange {
+    public var toggleColor: UIColor = .orange {
         didSet {
             slider.thumbTintColor = toggleColor
         }
     }
     
     @IBInspectable
-    var sliderColor: UIColor = .lightGray {
+    public var sliderColor: UIColor = .lightGray {
         didSet {
             vwMain.backgroundColor = sliderColor
         }
     }
     
     @IBInspectable
-    var bulletColor: UIColor = .orange {
+    public var bulletColor: UIColor = .orange {
         didSet {
             vwSlider.backgroundColor = bulletColor.withAlphaComponent(0.5)
         }
     }
     
     @IBInspectable
-    var maxValue: Int = 5 {
+    public var maxValue: Int = 5 {
         didSet {
             DispatchQueue.main.async {
                 self.setup()
@@ -50,7 +50,7 @@ class BusSliderView: UIView, Connectable {
         }
     }
     
-    var value: Int {
+    public var value: Int {
         get {
             return Int(slider?.value ?? 0)
         }
@@ -61,16 +61,17 @@ class BusSliderView: UIView, Connectable {
                 v = maxValue
             }
             slider.value = Float(v)
+            onChange?(v)
         }
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         commit()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         
         commit()
@@ -85,7 +86,7 @@ class BusSliderView: UIView, Connectable {
         onChange?(index)
     }
     
-    private func setup() {
+    func setup() {
         clearStackSubViews()
         
         vwMain.layer.cornerRadius = 5
@@ -98,9 +99,7 @@ class BusSliderView: UIView, Connectable {
         layoutSubviews()
     }
     
-    
-    
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         DispatchQueue.main.async { [weak self] in
@@ -116,7 +115,7 @@ class BusSliderView: UIView, Connectable {
         }
     }
     
-    private func getWidthCurrentSlider() -> CGFloat {
+    func getWidthCurrentSlider() -> CGFloat {
         let currentSlider = Int(self.slider.value)
         
         var max = self.maxValue - 1
@@ -128,11 +127,11 @@ class BusSliderView: UIView, Connectable {
         return CGFloat(Int(self.frame.width) * currentSlider / max)
     }
     
-    private func clearStackSubViews() {
+    func clearStackSubViews() {
         stack.arrangedSubviews.forEach { $0.removeFromSuperview() }
     }
     
-    private func setupSlider() {
+    func setupSlider() {
         slider.minimumTrackTintColor = .clear
         slider.maximumTrackTintColor = .clear
         
@@ -144,7 +143,7 @@ class BusSliderView: UIView, Connectable {
         slider.maximumValue = Float(max)
     }
     
-    private func createBullets() {
+    func createBullets() {
         for _ in 0..<maxValue {
             let v = UIView(frame: .zero)
             v.layer.cornerRadius = 5
@@ -153,4 +152,5 @@ class BusSliderView: UIView, Connectable {
             stack.addArrangedSubview(v)
         }
     }
+    
 }
