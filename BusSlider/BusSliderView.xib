@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BusSliderView" customModule="BusSlider" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="count">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="slider" destination="mAo-i4-AuP" id="ITo-Oj-q1T"/>
+                <outlet property="stack" destination="9m2-LE-zwZ" id="w91-en-2tV"/>
+                <outlet property="vwMain" destination="aoT-Ea-DW6" id="2M7-EZ-rVO"/>
+                <outlet property="vwSlider" destination="Mlc-Ef-Rc2" id="cWr-SO-ikb"/>
+                <outlet property="widthConstraint" destination="070-X3-sQE" id="fZd-Ir-9wg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-N6-C2v">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoT-Ea-DW6">
+                            <rect key="frame" x="0.0" y="38.5" width="414" height="10"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlc-Ef-Rc2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
+                                    <color key="backgroundColor" red="0.1137254902" green="0.69411764710000001" blue="0.64705882349999999" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="414" id="070-X3-sQE"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9m2-LE-zwZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" name="Gray_Ultra_Light_F7F7F7"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="9m2-LE-zwZ" secondAttribute="bottom" id="2Rl-cV-ho3"/>
+                                <constraint firstItem="Mlc-Ef-Rc2" firstAttribute="leading" secondItem="aoT-Ea-DW6" secondAttribute="leading" id="3ot-Uz-Vdx"/>
+                                <constraint firstItem="9m2-LE-zwZ" firstAttribute="top" secondItem="aoT-Ea-DW6" secondAttribute="top" id="B1v-95-bkv"/>
+                                <constraint firstAttribute="trailing" secondItem="9m2-LE-zwZ" secondAttribute="trailing" id="WXk-tp-W1k"/>
+                                <constraint firstAttribute="height" constant="10" id="h4b-jE-zHr"/>
+                                <constraint firstItem="Mlc-Ef-Rc2" firstAttribute="top" secondItem="aoT-Ea-DW6" secondAttribute="top" id="kaG-3L-sBR"/>
+                                <constraint firstItem="9m2-LE-zwZ" firstAttribute="leading" secondItem="aoT-Ea-DW6" secondAttribute="leading" id="u5r-UZ-xZZ"/>
+                                <constraint firstAttribute="bottom" secondItem="Mlc-Ef-Rc2" secondAttribute="bottom" id="xWr-ko-xRb"/>
+                            </constraints>
+                        </view>
+                        <slider opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="mAo-i4-AuP">
+                            <rect key="frame" x="-2" y="0.0" width="418" height="88"/>
+                            <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="thumbTintColor" red="0.11372549019607843" green="0.69411764705882351" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="changeSlider:" destination="-1" eventType="valueChanged" id="iFW-Oc-Sky"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="aoT-Ea-DW6" firstAttribute="centerY" secondItem="ayd-N6-C2v" secondAttribute="centerY" id="P5B-Ji-L90"/>
+                        <constraint firstAttribute="trailing" secondItem="aoT-Ea-DW6" secondAttribute="trailing" id="VLu-XX-WOo"/>
+                        <constraint firstItem="mAo-i4-AuP" firstAttribute="leading" secondItem="ayd-N6-C2v" secondAttribute="leading" id="gBW-Tz-2aT"/>
+                        <constraint firstAttribute="bottom" secondItem="mAo-i4-AuP" secondAttribute="bottom" id="oqt-rC-P3S"/>
+                        <constraint firstAttribute="trailing" secondItem="mAo-i4-AuP" secondAttribute="trailing" id="ssF-xu-OVr"/>
+                        <constraint firstItem="aoT-Ea-DW6" firstAttribute="leading" secondItem="ayd-N6-C2v" secondAttribute="leading" id="wN5-ei-Slt"/>
+                        <constraint firstItem="mAo-i4-AuP" firstAttribute="top" secondItem="ayd-N6-C2v" secondAttribute="top" id="x6t-Iw-Rj5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ayd-N6-C2v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="d0J-Do-YIB"/>
+                <constraint firstAttribute="trailing" secondItem="ayd-N6-C2v" secondAttribute="trailing" id="e9x-hJ-Igt"/>
+                <constraint firstAttribute="bottom" secondItem="ayd-N6-C2v" secondAttribute="bottom" id="e9z-hD-rWR"/>
+                <constraint firstItem="ayd-N6-C2v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qBb-mg-Pxr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-171.09375"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Gray_Ultra_Light_F7F7F7">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
