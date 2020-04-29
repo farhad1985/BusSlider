@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
  
   s.ios.deployment_target = '11.0'
   s.source_files = 'BusSlider/*'
-  s.framework = 'SystemConfiguration'
+  s.exclude_files = "BusSlider/BusSlider/*.plist"
 end
