@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/farhad1985/BusSlider.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '11.0'
-  s.source_files = 'BusSlider/BusSlider/**/*'
-  s.exclude_files = 'BusSlider/BusSlider/*.plist'
+  s.source_files = 'BusSlider/**/*'
+  s.exclude_files = 'BusSlider/*.plist'
   s.swift_version = '5'
 
 end
