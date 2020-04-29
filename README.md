@@ -23,8 +23,17 @@ The BusSlider is in cocoapods. you should open your terminal and change your pat
 
 You can use BusSlider in you storyboard. you can change colors and set maxValue.
 
+
 <img src="/Screenshot/story.png" width="350" />
 
 <img src="/Screenshot/help.png" width="350" />
+
+if you wanna get current value, you can use `onChange` method.
+
+`
+bsSlider.onChange = { value in
+            self.lblText1.text = "\(value)"
+        }
+`
 
 
