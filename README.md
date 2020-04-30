@@ -19,9 +19,9 @@ The BusSlider is in cocoapods. you should open your terminal and change your pat
 ##### `pod 'BusSlider'`
 
 
-## How to Use
+## How to use
 
-You can use BusSlider in you storyboard. you can change colors and set maxValue.
+You can use BusSlider in your storyboard. you can change colors and set maxValue.
 
 
 <img src="/Screenshot/story.png" width="350" />
